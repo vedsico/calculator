@@ -1,13 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 177px;
+    margin: 25px auto;
+}
+
 .input {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
+
 .input div:nth-child(4n + 0) {
     flex-basis: 100%;
     padding: 0;
     border: none;
 }
-.input div {
+
+.input div, .extended div {
     padding: 15px;
     border: 1px solid #666;
     border-radius: 25px;
@@ -16,4 +30,9 @@
     cursor: pointer;
     font-family: Arial, serif;
     font-size: calc(100% - 20%);
+}
+
+.extended div {
+    width: 100%;
+    text-align: center;
 }

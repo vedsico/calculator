@@ -26,10 +26,30 @@ $("#id1").click(function (e) {
             eq = Number(num1) - Number(num2)
             break
         default:
-            alert()
+            alert("Provide some numbers!")
     }
 
     $(".output input").val(eq)
 })
 
+$(".extended div").click(function (e) {
+    $(".output input").val("")
+    localStorage.clear()
 
+})
+
+// Check Size occuped variables on machine for this program
+function getSizeOccuped() {
+    let _lsTotal = 0,
+        _xLen, _x;
+    for (_x in localStorage) {
+        if (!localStorage.hasOwnProperty(_x)) {
+            continue;
+        }
+        _xLen = ((localStorage[_x].length + _x.length) * 2);
+        _lsTotal += _xLen;
+        console.log(_x.substring(0, 50) + " = " + (_xLen / 1024).toFixed(2) + " KB")
+    }
+    ;
+    console.log("Total = " + (_lsTotal / 1024).toFixed(2) + " KB / 5 MB");
+}
