@@ -1,0 +1,19 @@
+.input {
+    display: flex;
+    flex-wrap: wrap;
+}
+.input div:nth-child(4n + 0) {
+    flex-basis: 100%;
+    padding: 0;
+    border: none;
+}
+.input div {
+    padding: 15px;
+    border: 1px solid #666;
+    border-radius: 25px;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+    font-family: Arial, serif;
+    font-size: calc(100% - 20%);
+}
