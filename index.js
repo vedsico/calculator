@@ -1,17 +1,34 @@
-$(".input div").each(function (index, el) {
+
+
+$(".input").each(function (index, el) {
     $(this).click(function (e) {
-        if (!localStorage.getItem("num1")) {
+
+        if ($.isNumeric(Number(e.target.innerText)) && !localStorage.getItem("num2") && !localStorage.getItem("op")) {
             localStorage.setItem("num1", e.target.innerText)
-        } else if (!localStorage.getItem("op")) {
+            if (localStorage.getItem("num1")) {
+                // $(".output input").val($(".output input").val() + e.target.innerText)
+            } else {
+
+            }
+        } else if ((!localStorage.getItem("op") || !$.isNumeric(Number(e.target.innerText))) && (e.target.innerText.indexOf("+") !== -1) || (e.target.innerText.indexOf("-") !== -1)) {
             localStorage.setItem("op", e.target.innerText)
-        } else if (!localStorage.getItem("num2")) {
+            // $(".output input").val($(".output input").val() + e.target.innerText)
+
+
+        } else if ($.isNumeric(Number(e.target.innerText))) {
             localStorage.setItem("num2", e.target.innerText)
+            /*$(".output input").val(function () {
+                $(this).value += e.target.innerText
+            })*/
+            // $(".output input").val($(".output input").val() + e.target.innerText)
+
+
         }
     })
 
 })
 
-$("#id1").click(function (e) {
+$("#equal").click(function (e) {
 
     let op = localStorage.getItem("op")
     let num1 = localStorage.getItem("num1")

@@ -9,10 +9,16 @@
     margin: 25px auto;
 }
 
+.extended div {
+    width: 100%;
+    text-align: center;
+}
+
 .input {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
+    position: relative;
 }
 
 .input div:nth-child(4n + 0) {
@@ -32,7 +38,18 @@
     font-size: calc(100% - 20%);
 }
 
-.extended div {
-    width: 100%;
-    text-align: center;
+
+
+#equal {
+    position: absolute!important;
+    bottom: 0;
+    right: 0;
+}
+
+.operands {
+    position: absolute;
+    right: 0;
+    border: none!important;
+    background-color: transparent!important;
+    padding: 0!important;
 }
