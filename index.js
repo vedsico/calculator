@@ -1,27 +1,23 @@
 
-
 $(".input").each(function (index, el) {
     $(this).click(function (e) {
 
         if ($.isNumeric(Number(e.target.innerText)) && !localStorage.getItem("num2") && !localStorage.getItem("op")) {
-            localStorage.setItem("num1", e.target.innerText)
             if (localStorage.getItem("num1")) {
-                // $(".output input").val($(".output input").val() + e.target.innerText)
             } else {
 
             }
+            $(".output input").val($(".output input").val() + e.target.innerText)
+            localStorage.setItem("num1", $(".output input").val())
+
         } else if ((!localStorage.getItem("op") || !$.isNumeric(Number(e.target.innerText))) && (e.target.innerText.indexOf("+") !== -1) || (e.target.innerText.indexOf("-") !== -1)) {
-            localStorage.setItem("op", e.target.innerText)
-            // $(".output input").val($(".output input").val() + e.target.innerText)
+            $(".output input").val($(".output input").val() + e.target.innerText)
+
+            localStorage.setItem("op", $(".output input").val() + e.target.innerHTMl.slice(-1))
 
 
         } else if ($.isNumeric(Number(e.target.innerText))) {
             localStorage.setItem("num2", e.target.innerText)
-            /*$(".output input").val(function () {
-                $(this).value += e.target.innerText
-            })*/
-            // $(".output input").val($(".output input").val() + e.target.innerText)
-
 
         }
     })
@@ -54,19 +50,3 @@ $(".extended div").click(function (e) {
     localStorage.clear()
 
 })
-
-// Check Size occuped variables on machine for this program
-function getSizeOccuped() {
-    let _lsTotal = 0,
-        _xLen, _x;
-    for (_x in localStorage) {
-        if (!localStorage.hasOwnProperty(_x)) {
-            continue;
-        }
-        _xLen = ((localStorage[_x].length + _x.length) * 2);
-        _lsTotal += _xLen;
-        console.log(_x.substring(0, 50) + " = " + (_xLen / 1024).toFixed(2) + " KB")
-    }
-    ;
-    console.log("Total = " + (_lsTotal / 1024).toFixed(2) + " KB / 5 MB");
-}
