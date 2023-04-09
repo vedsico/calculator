@@ -17,8 +17,15 @@
 .input {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
     position: relative;
+    height: 120px;
+}
+.inumbers {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(160px - 1px);
+    position: absolute;
+    top: 0;
 }
 
 .output {
@@ -41,17 +48,17 @@
     top: 0;
 }
 
-.input div:nth-child(4n + 0) {
-    flex-basis: 100%;
-    padding: 0;
-    border: none;
-}
 
-.input > div:not(.iignore), .ioperands > div, .iequal {
+
+.inumbers > div, .ioperands > div, .iequal {
     width: 40px;
     height: 40px;
     line-height: 100%;
     text-align: center;
+    border-radius: 50%;
+    padding: 15px;
+    border: 1px solid #666;
+    color: #fff;
 }
 
 .extended > div {
@@ -59,7 +66,7 @@
     line-height: 100%;
 }
 
-.input div, .extended div {
+.inumbers div, .extended div, .iequal div {
     padding: 15px;
     border: 1px solid #666;
     border-radius: 25px;
@@ -73,7 +80,7 @@
 
 .iequal, .ioperands {
     position: absolute !important;
-    display: inline-block;
+    display: inline-block !important;
 }
 
 .iequal {

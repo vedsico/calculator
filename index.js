@@ -1,4 +1,4 @@
-$(".input > div:not(.ioperands):not(.iequal)").each(function (index, el) {
+$(".input .inumbers > div").each(function (index, el) {
     $(this).click(function (e) {
 
         if (!localStorage.getItem("eq")) {
@@ -70,7 +70,7 @@ $(".iequal").click(function (e) {
     }
 
 
-    if ((ind("+").length <= 1 || ind("-").length <= 1) && ind("=").length <= 1) {
+    if ((ind("+").length <= 1 || ind("-").length <= 1) && ind("=").length <= 1 && $(".output input").val().length > 0) {
         $(".output input").val($(".output input").val() + "=" + eq)
 
         localStorage.setItem("eq", eq)
