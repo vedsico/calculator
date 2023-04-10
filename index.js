@@ -68,7 +68,7 @@ $(".input .iequal").click(function (e) {
 
         localStorage.setItem("eq", eq)
 
-        $(".historical .history").prepend($(`<div>${num1} + ${num2} = ${localStorage.getItem("eq")}</div>`))
+        $(".historical .history").prepend($(`<div><div>${num1} + ${num2} = ${localStorage.getItem("eq")}</div><div class="currTime">${new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()}</div></div>`))
     }
 })
 

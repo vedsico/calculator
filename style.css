@@ -125,6 +125,12 @@
     overflow-y: scroll;
     color: #1a119f;
     background: aqua;
+    font-family: arial, sans-serif;
+    font-size: 17.470px;
+}
+
+.history > div {
+    height: 21px;
 }
 
 .historical button {
@@ -139,4 +145,12 @@
 
 .no-content {
     display: block;
+}
+
+.currTime {
+    font-size: 11px;
+    text-align: right;
+    position: relative;
+    top: -6px;
+    color: #aadcef;
 }
