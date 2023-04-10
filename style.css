@@ -59,6 +59,7 @@
     padding: 15px;
     border: 1px solid #666;
     color: #fff;
+    cursor: pointer;
 }
 
 .extended > div {
@@ -114,7 +115,28 @@
 
 .historical .history {
     position: absolute;
-    top: -163px;
-    background-color: white;
-    height: 100%;
+    top: -151px;
+    display: none;
+    padding: 15px;
+    border: 1px solid #ccc;
+    bottom: 35px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    overflow-y: scroll;
+    color: #1a119f;
+    background: aqua;
+}
+
+.historical button {
+    padding: 5px 25px;
+    border: none;
+    background: yellow;
+    color: black;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 5px 5px;
+}
+
+.no-content {
+    display: block;
 }
